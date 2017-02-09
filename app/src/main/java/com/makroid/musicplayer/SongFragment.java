@@ -38,7 +38,7 @@ public class SongFragment extends Fragment{
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
 
-    public static SongFragment newInstance(int page) {
+    public SongFragment newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         SongFragment fragment = new SongFragment();

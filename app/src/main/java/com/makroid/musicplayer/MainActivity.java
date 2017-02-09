@@ -24,11 +24,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setViewPager() {
+        SongPagerAdapter adapter = new SongPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new SongFragment().newInstance(1),"songs");
+        adapter.addFragment(new SongFragment().newInstance(2),"Artist");
+        adapter.addFragment(new SongFragment().newInstance(3),"Album");
+        adapter.addFragment(new SongFragment().newInstance(4),"Playlist");
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(new SongPagerAdapter(getSupportFragmentManager(),
-                MainActivity.this));
+        viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(4);
-
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
