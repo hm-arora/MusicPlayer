@@ -37,6 +37,13 @@
         android:layout_weight="1"
         android:background="@android:color/white" />
 
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="0.15"
+            />
+
 </LinearLayout>
     <android.support.design.widget.NavigationView
         app:headerLayout="@layout/navheader"
@@ -44,4 +51,5 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/drawer_view" />
+
 </android.support.v4.widget.DrawerLayout>

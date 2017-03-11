@@ -2,6 +2,8 @@ package com.makroid.musicplayer;
 
 import android.content.pm.ActivityInfo;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Fragment fragment = new BottomFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container,fragment).commit();
         initToolbar();
         setViewPager();
     }
@@ -53,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 mDrawer.openDrawer(GravityCompat.START);
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

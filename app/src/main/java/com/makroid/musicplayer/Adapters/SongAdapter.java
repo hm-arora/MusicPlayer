@@ -43,9 +43,10 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
             marginLayoutParams.setMargins(0, 0, 0, 100);
             holder.layout.setLayoutParams(marginLayoutParams);
 //        }
+            Song item = songList.get(position);
         holder.imageView.setImageResource(R.drawable.ic_music_player);
-        holder.textView.setText(songList.get(position).getTitle());
-        holder.artistView.setText(songList.get(position).getArtist());
+        holder.textView.setText(item.title);
+        holder.artistView.setText(item.artistName);
     }
 
     @Override

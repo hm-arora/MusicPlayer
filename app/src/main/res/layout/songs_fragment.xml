@@ -7,7 +7,7 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:scrollbars="vertical"
-        android:scrollbarSize="10dp"
+        android:scrollbarSize="2dp"
         android:scrollbarThumbVertical="@color/colorAccent"
         android:layout_height="match_parent" />
 
